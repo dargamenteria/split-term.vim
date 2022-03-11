@@ -54,8 +54,7 @@ extracting the files in your `~/.vim` or `~/.config/nvim` directory.
 - **`:TTerm`** Opens a new terminal buffer using `:tabnew` (new tab)
 
 Both `:Term` and `:VTerm` commands accept a `<count>` like their `:new`/`:vnew`
-counterparts. You can prefix both commands with a number to specifiy the buffer
-height / width.
+counterparts. You can prefix both commands with a number but instead for specifiying the buffer height / width. It will create count number of terms
 
 Similar to the original `:terminal`, both commands accepts any number of
 arguments. It can be used to spawn a cmd and see the result, or even start a
@@ -63,21 +62,11 @@ REPL.
 
 **Examples**
 
-- `:10Term` would open an horizontal buffer with 10 lines displayed, on top of
-  the current buffer.
+- `:Term 3` would create 3 horizontal terms
 
-- `:100VTerm` would open a vertical buffer with 10 lines displayed, right of
-  the current buffer.
+- `:VTerm 3` would crete 3 vertical terms
 
-- `:Term npm search something` would open a new terminal buffer and launch a
-  search on npm registry. This is a good candidate to appreciate the async
-  nature of neovim (no more frozen UI!)
-
-- `:2Term npm install express` would open a minimal buffer with only two lines,
-  immediatly invoking `npm install express` with npm output displayed within
-  the terminal buffer. Hit `<Enter>` when done to close the buffer.
-
-- `:VTerm node` would open a vertical buffer with a node REPL started.
+- `:Term 2 sh would create 2 horizontal sh shells
 
 ## Configuration
 
