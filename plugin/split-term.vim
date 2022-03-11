@@ -1,4 +1,3 @@
-
 let s:force_vertical = exists('g:split_term_vertical') ? 1 : 0
 let s:map_keys = exists('g:disable_key_mappings') ? 0 : 1
 let s:default_shell = exists('g:split_term_default_shell') ? g:split_term_default_shell : 0
@@ -56,8 +55,20 @@ endf
 fun! s:openSplitTerm(args, count, vertical)
   let direction = s:force_vertical ? 1 : a:vertical
 
-  call s:openBuffer(a:count, direction)
-  call s:openTerm(a:args)
+  let i=0
+  let t=0
+  if a:count
+    let t=a:count
+  else
+    let t=1
+  endif
+
+  while i<a:count
+    call s:openBuffer(a:count, direction)
+    call s:openTerm(a:args)
+    let i+=1
+  endwhile
+
 endf
 
 " Opens a new terminal buffer, but instead of doing so using split buffer, it
