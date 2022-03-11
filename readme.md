@@ -66,7 +66,7 @@ REPL.
 
 - `:VTerm 3` would crete 3 vertical terms
 
-- `:Term 2 sh would create 2 horizontal sh shells
+- `:Term 2 sh ` would create 2 horizontal sh shells
 
 ## Configuration
 
